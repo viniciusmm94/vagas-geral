@@ -1,6 +1,16 @@
 # =====================================================================
 # Pipeline completo de busca de vagas
-# Gupy + InHire + Nerdin
+#
+# Fontes:
+# Gupy
+# InHire
+# Nerdin
+# Trampos
+# Mentora Dados
+# Radar Vagas
+# Glassdoor
+# Vagas.com
+# Sólides
 #
 # Uso:
 # powershell -ExecutionPolicy Bypass -File rodar_tudo.ps1
@@ -57,7 +67,7 @@ try {
 }
 catch {
 
-  throw "Node.js nao encontrado no PATH. Instale o Node (https://nodejs.org)."
+  throw "Node.js nao encontrado no PATH. Instale o Node."
 
 }
 
@@ -71,7 +81,7 @@ Write-Host ""
 
 Write-Host "==========================================" -ForegroundColor Yellow
 Write-Host " BUSCA DE VAGAS - PIPELINE COMPLETO" -ForegroundColor Yellow
-Write-Host " Gupy + InHire + Nerdin + Trampos + Mentora Dados" -ForegroundColor Yellow
+Write-Host " 9 FONTES + MERGE + EXCEL" -ForegroundColor Yellow
 Write-Host "==========================================" -ForegroundColor Yellow
 
 # =====================================================================
@@ -159,11 +169,51 @@ Step 10 `
   }
 
 # =====================================================================
-# CONSOLIDACAO
+# RADAR VAGAS
 # =====================================================================
 
 Step 11 `
-  "Consolidar Gupy + InHire + Nerdin + Trampos + Mentora Dados e deduplicar -> vagas_final.json" `
+  "Radar Vagas: buscar vagas" `
+  {
+    node "$dir\radarvagas.js"
+  }
+
+# =====================================================================
+# GLASSDOOR
+# =====================================================================
+
+Step 12 `
+  "Glassdoor: buscar vagas" `
+  {
+    node "$dir\glassdoor.js"
+  }
+
+# =====================================================================
+# VAGAS.COM
+# =====================================================================
+
+Step 13 `
+  "Vagas.com: buscar vagas" `
+  {
+    node "$dir\vagas.js"
+  }
+
+# =====================================================================
+# SOLIDES
+# =====================================================================
+
+Step 14 `
+  "Solides: buscar vagas Remoto + Hibrido SP (ate 20 dias)" `
+  {
+    node "$dir\solides.js"
+  }
+
+# =====================================================================
+# CONSOLIDACAO
+# =====================================================================
+
+Step 15 `
+  "Consolidar todas as fontes e deduplicar" `
   {
     node "$dir\merge.js"
   }
@@ -172,7 +222,7 @@ Step 11 `
 # DATA DE DETECCAO
 # =====================================================================
 
-Step 12 `
+Step 16 `
   "Carimbar data de deteccao (novas = hoje)" `
   {
     node "$dir\stamp_dates.js"
@@ -182,7 +232,7 @@ Step 12 `
 # PRESENCA DE EMPRESAS
 # =====================================================================
 
-Step 13 `
+Step 17 `
   "Montar tabela de presenca" `
   {
     node "$dir\presence.js"
@@ -192,7 +242,7 @@ Step 13 `
 # EXCEL
 # =====================================================================
 
-Step 14 `
+Step 18 `
   "Gerar planilha final (Excel, 3 abas)" `
   {
     & "$dir\build_xlsx.ps1"
@@ -223,11 +273,15 @@ Write-Host " - InHire" -ForegroundColor Green
 Write-Host " - Nerdin" -ForegroundColor Green
 Write-Host " - Trampos" -ForegroundColor Green
 Write-Host " - Mentora Dados" -ForegroundColor Green
+Write-Host " - Radar Vagas" -ForegroundColor Green
+Write-Host " - Glassdoor" -ForegroundColor Green
+Write-Host " - Vagas.com" -ForegroundColor Green
+Write-Host " - Solides" -ForegroundColor Green
 
 Write-Host ""
 
 Write-Host "Resultado JSON:" -ForegroundColor Green
-Write-Host " $dir\vagas_final.json" -ForegroundColor Green
+Write-Host " $dir\vagas_merged.json" -ForegroundColor Green
 
 Write-Host ""
 
