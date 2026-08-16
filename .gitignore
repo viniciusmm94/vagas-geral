@@ -22,5 +22,36 @@ trampos_test_results.json
 trampos_analistas_debug.json
 trampos_debug_links.json
 trampos_ember_config.txt
+.indeed-profile/
+# ==========================================
+# RESULTADOS GERADOS
+# ==========================================
+*_results.json
+vagas_merged.json
+
+# ==========================================
+# DEBUG / RESPOSTAS TEMPORÁRIAS
+# ==========================================
+*_debug.html
+*_debug.txt
+*_debug.json
+*_response.json
+*_data.json
+
+radarvagas_bundle.js
+radarvagas_jobpage.js
+radarvagas_mapdb.js
+
+# ==========================================
+# NODE
+# ==========================================
+node_modules/
+
+# ==========================================
+# PLAYWRIGHT
+# ==========================================
+.indeed-profile/
+
+
 # Arquivos temporários do Excel
 ~$*.xlsx

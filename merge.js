@@ -1,639 +1,960 @@
 const fs = require('fs');
 const path = require('path');
 
-const {
-  DIR
-} = require('./lib.js');
+const DIR = __dirname;
 
 // ============================================================
-// LEITURA DOS RESULTADOS
+// FONTES OFICIAIS DO MERGE
 // ============================================================
 
-const gupy = JSON.parse(
-  fs.readFileSync(
-    path.join(
-      DIR,
-      'gupy_results.json'
-    ),
-    'utf8'
-  )
+const FILES = [
+  'gupy_results.json',
+  'inhire_results.json',
+  'nerdin_results.json',
+  'trampos_results.json',
+  'mentoradados_results.json',
+  'radarvagas_results.json',
+  'glassdoor_results.json',
+  'vagas_results.json',
+  'solides_results.json'
+];
+
+const OUTPUT = path.join(
+  DIR,
+  'vagas_merged.json'
 );
 
-const inhire = JSON.parse(
-  fs.readFileSync(
-    path.join(
-      DIR,
-      'inhire_results.json'
-    ),
-    'utf8'
-  )
-);
+// ============================================================
+// UTILITÁRIOS
+// ============================================================
 
-const nerdin = JSON.parse(
-  fs.readFileSync(
-    path.join(
-      DIR,
-      'nerdin_results.json'
-    ),
-    'utf8'
-  )
-);
+function clean(value) {
+  if (
+    value === undefined ||
+    value === null
+  ) {
+    return '';
+  }
 
-const trampos = JSON.parse(
-  fs.readFileSync(
-    path.join(
-      DIR,
-      'trampos_results.json'
-    ),
-    'utf8'
-  )
-);
+  return String(value).trim();
+}
 
-const mentoradados = JSON.parse(
-  fs.readFileSync(
-    path.join(
-      DIR,
-      'mentoradados_results.json'
-    ),
-    'utf8'
-  )
-);
+function normalize(value) {
+  return clean(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizeWorkplace(value) {
+  const text = normalize(value);
+
+  if (
+    text.includes('remot') ||
+    text.includes('home office') ||
+    text.includes('home-office')
+  ) {
+    return 'Remoto';
+  }
+
+  if (
+    text.includes('hibrid') ||
+    text === 'hybrid'
+  ) {
+    return 'Híbrido';
+  }
+
+  if (
+    text.includes('presencial') ||
+    text.includes('onsite') ||
+    text.includes('on-site')
+  ) {
+    return 'Presencial';
+  }
+
+  return clean(value);
+}
+
+function firstValue(...values) {
+  for (const value of values) {
+    if (
+      value !== undefined &&
+      value !== null &&
+      clean(value) !== ''
+    ) {
+      return value;
+    }
+  }
+
+  return '';
+}
+
+function getSourceFromFile(filename) {
+  const map = {
+    'gupy_results.json': 'Gupy',
+    'inhire_results.json': 'InHire',
+    'nerdin_results.json': 'Nerdin',
+    'trampos_results.json': 'Trampos.co',
+    'mentoradados_results.json': 'Mentora Dados',
+    'radarvagas_results.json': 'Radar Vagas',
+    'glassdoor_results.json': 'Glassdoor',
+    'vagas_results.json': 'Vagas.com',
+    'solides_results.json': 'Sólides'
+  };
+
+  return map[filename] || filename;
+}
 
 // ============================================================
 // NORMALIZAÇÃO
 // ============================================================
-function norm(value) {
-  return String(
-    value || ''
-  )
-    .normalize('NFD')
-    .replace(
-      /[\u0300-\u036f]/g,
-      ''
-    )
-    .toLowerCase()
-    .trim();
-}
 
-// ============================================================
-// ALERTAS
-// ============================================================
-
-function alerta(row) {
-  const title =
-    norm(
-      row.jobTitle
+function normalizeJob(job, filename) {
+  const source =
+    firstValue(
+      job.source,
+      job.platform,
+      job.plataforma,
+      getSourceFromFile(filename)
     );
 
-  const notes = [];
-
-  /*
-    Se o título mencionar presencial/híbrido,
-    deixamos alerta para conferência.
-
-    Híbrido pode ser válido porque aceitamos
-    São Paulo capital.
-  */
-  if (
-    /hibrid|presencial|on-?site/.test(
-      title
-    )
-  ) {
-    notes.push(
-      'título menciona híbrido/presencial — conferir'
+  const jobTitle =
+    firstValue(
+      job.jobTitle,
+      job.title,
+      job.titulo_vaga,
+      job.titulo,
+      job.cargo
     );
-  }
+
+  const company =
+    firstValue(
+      job.company,
+      job.companyName,
+      job.companyList,
+      job.companyGupy,
+      job.empresa,
+      job.nome_na_plataforma
+    );
+
+  const workplaceRaw =
+    firstValue(
+      job.workplaceType,
+      job.tipo,
+      job.jobType,
+      job.modalidade,
+      job.modelo
+    );
+
+  const workplaceType =
+    normalizeWorkplace(
+      workplaceRaw
+    );
 
   const location =
-    norm(
-      row.location
+    firstValue(
+      job.location,
+      job.local,
+      job.localidade
     );
 
-  /*
-    Home Office e vazio são tratados
-    normalmente.
-  */
-  const brOk =
-    location === '' ||
-    location === 'home office' ||
-    location === 'remoto' ||
-    /\bbr\b|brasil|brazil/.test(
-      location
-    ) ||
-    /\bsp\b|sao paulo/.test(
-      location
+  const url =
+    firstValue(
+      job.externalApplyUrl,
+      job.link_candidatura,
+      job.url,
+      job.link,
+      job.redirectLink,
+      job.originalUrl,
+      job.link_fonte
     );
 
-  const foreign =
-    /\b(us|usa|eua|singapore|sg|portugal|pt|mexico|argentina|spain|espanha|uk|remote latam|north america)\b/.test(
-      location
+  const originalUrl =
+    firstValue(
+      job.originalUrl,
+      job.link_fonte,
+      job.url,
+      job.link
     );
+
+  const publishedDate =
+    firstValue(
+      job.publishedDate,
+      job.createdAt,
+      job.publicado,
+      job.date,
+      job.dataPublicacao
+    );
+
+  const description =
+    firstValue(
+      job.description,
+      job.descricao
+    );
+
+  const seniority =
+    firstValue(
+      job.seniority,
+      job.senioridade
+    );
+
+  const role =
+    firstValue(
+      job.role,
+      job.cargo_categoria,
+      job.area
+    );
+
+  const id =
+    firstValue(
+      job.id,
+      job.jobId,
+      job.jobIdEncoded,
+      job.jobkey,
+      job.referenceId
+    );
+
+  let ageDays = '';
 
   if (
-    !brOk &&
-    foreign
+    job.ageDays !== undefined &&
+    job.ageDays !== null &&
+    job.ageDays !== ''
   ) {
-    notes.push(
-      'local fora do BR — pode exigir inglês'
-    );
+    ageDays =
+      Number(job.ageDays);
   }
 
-  return notes.join(
-    '; '
-  );
+  return {
+    source:
+      clean(source),
+
+    id:
+      clean(id),
+
+    role:
+      clean(role),
+
+    jobTitle:
+      clean(jobTitle),
+
+    company:
+      clean(company),
+
+    workplaceType:
+      workplaceType,
+
+    location:
+      clean(location),
+
+    publishedDate:
+      clean(publishedDate),
+
+    ageDays,
+
+    seniority:
+      clean(seniority),
+
+    url:
+      clean(url),
+
+    originalUrl:
+      clean(originalUrl),
+
+    description:
+      clean(description),
+
+    sourceFile:
+      filename
+  };
 }
 
 // ============================================================
-// NORMALIZAÇÃO DAS 5 FONTES
+// CHAVES DE DUPLICIDADE
 // ============================================================
 
-const all =
-  [
-    ...gupy,
-    ...inhire,
-    ...nerdin,
-    ...trampos,
-    ...mentoradados
-  ]
-    .map(row => {
+function cleanUrl(url) {
+  if (!url) {
+    return '';
+  }
+
+  try {
+    const parsed =
+      new URL(url);
+
+    /*
+      Remove parâmetros normalmente usados
+      apenas para rastreamento.
+    */
+
+    const removeParams = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+      'origem',
+      'source',
+      'ref',
+      'rcm'
+    ];
+
+    for (
+      const param of removeParams
+    ) {
+      parsed.searchParams.delete(
+        param
+      );
+    }
+
+    return (
+      parsed.origin +
+      parsed.pathname +
+      (
+        parsed.searchParams.toString()
+          ? '?' +
+            parsed.searchParams.toString()
+          : ''
+      )
+    )
+      .replace(/\/+$/, '')
+      .toLowerCase();
+
+  } catch {
+    return normalize(url);
+  }
+}
+
+function getUrlKeys(job) {
+  const keys = [];
+
+  const url =
+    cleanUrl(
+      job.url
+    );
+
+  const original =
+    cleanUrl(
+      job.originalUrl
+    );
+
+  if (url) {
+    keys.push(
+      `url:${url}`
+    );
+  }
+
+  if (
+    original &&
+    original !== url
+  ) {
+    keys.push(
+      `url:${original}`
+    );
+  }
+
+  return keys;
+}
+
+function getIdentityKey(job) {
+  const title =
+    normalize(
+      job.jobTitle
+    );
+
+  const company =
+    normalize(
+      job.company
+    );
+
+  const workplace =
+    normalize(
+      job.workplaceType
+    );
+
+  if (
+    !title ||
+    !company
+  ) {
+    return '';
+  }
+
+  return [
+    'job',
+    title,
+    company,
+    workplace
+  ].join('|');
+}
+
+// ============================================================
+// ESCOLHER MELHOR REGISTRO QUANDO DUPLICADO
+// ============================================================
+
+function score(job) {
+  let points = 0;
+
+  if (job.jobTitle) points += 10;
+  if (job.company) points += 8;
+  if (job.url) points += 8;
+  if (job.location) points += 4;
+  if (job.publishedDate) points += 4;
+  if (job.description) points += 3;
+  if (job.seniority) points += 2;
+  if (job.role) points += 2;
+
+  return points;
+}
+
+function mergeDuplicate(
+  current,
+  incoming
+) {
+  let primary =
+    current;
+
+  let secondary =
+    incoming;
+
+  if (
+    score(incoming) >
+    score(current)
+  ) {
+    primary = incoming;
+    secondary = current;
+  }
+
+  const sources =
+    new Set([
+      ...(primary.sources || [
+        primary.source
+      ]),
+
+      ...(secondary.sources || [
+        secondary.source
+      ])
+    ]);
+
+  const sourceFiles =
+    new Set([
+      ...(primary.sourceFiles || [
+        primary.sourceFile
+      ]),
+
+      ...(secondary.sourceFiles || [
+        secondary.sourceFile
+      ])
+    ]);
+
+  return {
+    ...primary,
+
+    id:
+      firstValue(
+        primary.id,
+        secondary.id
+      ),
+
+    role:
+      firstValue(
+        primary.role,
+        secondary.role
+      ),
+
+    company:
+      firstValue(
+        primary.company,
+        secondary.company
+      ),
+
+    workplaceType:
+      firstValue(
+        primary.workplaceType,
+        secondary.workplaceType
+      ),
+
+    location:
+      firstValue(
+        primary.location,
+        secondary.location
+      ),
+
+    publishedDate:
+      firstValue(
+        primary.publishedDate,
+        secondary.publishedDate
+      ),
+
+    ageDays:
+      firstValue(
+        primary.ageDays,
+        secondary.ageDays
+      ),
+
+    seniority:
+      firstValue(
+        primary.seniority,
+        secondary.seniority
+      ),
+
+    url:
+      firstValue(
+        primary.url,
+        secondary.url
+      ),
+
+    originalUrl:
+      firstValue(
+        primary.originalUrl,
+        secondary.originalUrl
+      ),
+
+    description:
+      firstValue(
+        primary.description,
+        secondary.description
+      ),
+
+    sources:
+      [...sources],
+
+    sourceFiles:
+      [...sourceFiles]
+  };
+}
+
+// ============================================================
+// MAIN
+// ============================================================
+
+function main() {
+  console.log('');
+  console.log(
+    '=========================================='
+  );
+  console.log(
+    'MERGE DE VAGAS'
+  );
+  console.log(
+    '=========================================='
+  );
+  console.log('');
+
+  const allJobs = [];
+
+  const stats = {};
+
+  // ==========================================================
+  // CARREGAR FONTES
+  // ==========================================================
+
+  for (
+    const filename of FILES
+  ) {
+    const filepath =
+      path.join(
+        DIR,
+        filename
+      );
+
+    if (
+      !fs.existsSync(filepath)
+    ) {
+      console.log(
+        `[merge] AUSENTE: ${filename}`
+      );
+
+      stats[filename] = {
+        received: 0,
+        error: 'arquivo não encontrado'
+      };
+
+      continue;
+    }
+
+    try {
+      const text =
+        fs.readFileSync(
+          filepath,
+          'utf8'
+        );
+
+      const parsed =
+        JSON.parse(text);
+
+      const jobs =
+        Array.isArray(parsed)
+          ? parsed
+          : [];
+
+      stats[filename] = {
+        received:
+          jobs.length
+      };
+
+      console.log(
+        `[merge] ${filename}: ${jobs.length}`
+      );
+
+      for (
+        const job of jobs
+      ) {
+        const normalized =
+          normalizeJob(
+            job,
+            filename
+          );
+
+        /*
+          Não inclui registros completamente
+          vazios ou sem título.
+        */
+
+        if (
+          !normalized.jobTitle
+        ) {
+          continue;
+        }
+
+        allJobs.push(
+          normalized
+        );
+      }
+
+    } catch (
+      error
+    ) {
+      console.log(
+        `[merge] ERRO ${filename}: ${error.message}`
+      );
+
+      stats[filename] = {
+        received: 0,
+        error:
+          error.message
+      };
+    }
+  }
+
+  // ==========================================================
+  // DEDUPLICAÇÃO
+  // ==========================================================
+
+  const merged = [];
+
+  const urlIndex =
+    new Map();
+
+  const identityIndex =
+    new Map();
+
+  let duplicates = 0;
+
+  for (
+    const job of allJobs
+  ) {
+    const urlKeys =
+      getUrlKeys(job);
+
+    const identityKey =
+      getIdentityKey(job);
+
+    let existingIndex = -1;
+
+    // --------------------------------------------------------
+    // PRIMEIRO: MESMA URL
+    // --------------------------------------------------------
+
+    for (
+      const key of urlKeys
+    ) {
+      if (
+        urlIndex.has(key)
+      ) {
+        existingIndex =
+          urlIndex.get(key);
+
+        break;
+      }
+    }
+
+    // --------------------------------------------------------
+    // SEGUNDO: MESMO TÍTULO + EMPRESA + MODALIDADE
+    // --------------------------------------------------------
+
+    if (
+      existingIndex === -1 &&
+      identityKey &&
+      identityIndex.has(
+        identityKey
+      )
+    ) {
+      existingIndex =
+        identityIndex.get(
+          identityKey
+        );
+    }
+
+    // --------------------------------------------------------
+    // NOVA VAGA
+    // --------------------------------------------------------
+
+    if (
+      existingIndex === -1
+    ) {
+      const index =
+        merged.length;
+
+      const newJob = {
+        ...job,
+
+        sources: [
+          job.source
+        ],
+
+        sourceFiles: [
+          job.sourceFile
+        ]
+      };
+
+      merged.push(
+        newJob
+      );
+
+      for (
+        const key of urlKeys
+      ) {
+        urlIndex.set(
+          key,
+          index
+        );
+      }
+
+      if (
+        identityKey
+      ) {
+        identityIndex.set(
+          identityKey,
+          index
+        );
+      }
+
+      continue;
+    }
+
+    // --------------------------------------------------------
+    // DUPLICADA
+    // --------------------------------------------------------
+
+    duplicates++;
+
+    const combined =
+      mergeDuplicate(
+        merged[
+          existingIndex
+        ],
+        job
+      );
+
+    merged[
+      existingIndex
+    ] =
+      combined;
+
+    /*
+      Registra também URLs descobertas
+      no registro duplicado.
+    */
+
+    for (
+      const key of getUrlKeys(
+        combined
+      )
+    ) {
+      urlIndex.set(
+        key,
+        existingIndex
+      );
+    }
+
+    if (
+      identityKey
+    ) {
+      identityIndex.set(
+        identityKey,
+        existingIndex
+      );
+    }
+  }
+
+  // ==========================================================
+  // LIMPEZA DE CAMPOS INTERNOS
+  // ==========================================================
+
+  const finalJobs =
+    merged.map(
+      job => {
+        const {
+          sourceFile,
+          ...cleanJob
+        } = job;
+
+        return cleanJob;
+      }
+    );
+
+  // ==========================================================
+  // ORDENAÇÃO
+  // ==========================================================
+
+  finalJobs.sort(
+    (a, b) => {
       /*
-        Nerdin pode possuir:
-
-        url
-        -> página da vaga no Nerdin
-
-        externalApplyUrl
-        -> site direto da empresa / ATS
-
-        Quando houver link direto,
-        usamos ele como link principal.
+        Se ambos tiverem ageDays,
+        mais nova primeiro.
       */
 
-      const sourceUrl =
-        row.url || '';
+      const ageA =
+        Number.isFinite(
+          Number(a.ageDays)
+        )
+          ? Number(a.ageDays)
+          : 9999;
 
-      const externalUrl =
-        row.externalApplyUrl ||
-        '';
+      const ageB =
+        Number.isFinite(
+          Number(b.ageDays)
+        )
+          ? Number(b.ageDays)
+          : 9999;
 
-      const primaryUrl =
-        externalUrl ||
-        sourceUrl;
+      if (
+        ageA !== ageB
+      ) {
+        return (
+          ageA -
+          ageB
+        );
+      }
 
-      return {
-        empresa:
-          row.companyList ||
-          row.companyGupy ||
-          row.companyInhire ||
-          '',
-
-        plataforma:
-          row.platform ||
-          '',
-
-        na_lista:
-          row.na_lista ||
-          'Sim',
-
-        cargo_categoria:
-          row.role ||
-          '',
-
-        titulo_vaga:
-          String(
-            row.jobTitle ||
-            ''
-          ).trim(),
-
-        tipo:
-          row.workplaceType ||
-          '',
-
-        local:
-          row.location ||
-          '',
-
-        /*
-          Link preferencial:
-          candidatura direta quando existir.
-        */
-        link:
-          primaryUrl,
-
-        /*
-          Página original da fonte.
-          No Nerdin será a página do Nerdin.
-        */
-        link_fonte:
-          sourceUrl,
-
-        /*
-          Fica preenchido apenas quando
-          existe candidatura externa.
-        */
-        link_candidatura:
-          externalUrl,
-
-        nome_na_plataforma:
-          row.companyGupy ||
-          row.companyInhire ||
-          row.companyNerdin ||
-          '',
-
-        publicado:
-          row.publishedDate ||
-          '',
-
-        alerta:
-          alerta(row)
-      };
-    });
-
-// ============================================================
-// DEDUPLICAÇÃO
-// ============================================================
-
-const seenLinks =
-  new Set();
-
-const seenJobs =
-  new Set();
-
-const deduped =
-  [];
-
-let duplicateByLink = 0;
-let duplicateByJob = 0;
-
-for (
-  const row of all
-) {
-  /*
-    Se Nerdin apontar diretamente para uma vaga
-    da Gupy, o link externo poderá coincidir com
-    o link que já veio da própria Gupy.
-
-    Isso permite remover a duplicidade.
-  */
-
-  const normalizedLink =
-    norm(
-      row.link
-    );
-
-  const normalizedSourceLink =
-    norm(
-      row.link_fonte
-    );
-
-  /*
-    Empresa + título permite detectar a mesma
-    vaga mesmo quando os links são diferentes.
-
-    NÃO usamos plataforma aqui de propósito,
-    pois queremos deduplicar também entre
-    Gupy / InHire / Nerdin.
-  */
-
-  const jobKey =
-    norm(
-      row.empresa
-    ) +
-    '|' +
-    norm(
-      row.titulo_vaga
-    );
-
-  let isDuplicate =
-    false;
-
-  // ----------------------------------------------------------
-  // DEDUPE POR LINK PRINCIPAL
-  // ----------------------------------------------------------
-
-  if (
-    normalizedLink &&
-    seenLinks.has(
-      normalizedLink
-    )
-  ) {
-    duplicateByLink++;
-
-    isDuplicate =
-      true;
-  }
-
-  // ----------------------------------------------------------
-  // DEDUPE POR EMPRESA + TÍTULO
-  // ----------------------------------------------------------
-
-  if (
-    !isDuplicate &&
-    jobKey !== '|' &&
-    seenJobs.has(
-      jobKey
-    )
-  ) {
-    duplicateByJob++;
-
-    isDuplicate =
-      true;
-  }
-
-  if (
-    isDuplicate
-  ) {
-    continue;
-  }
-
-  // ----------------------------------------------------------
-  // REGISTRA
-  // ----------------------------------------------------------
-
-  if (
-    normalizedLink
-  ) {
-    seenLinks.add(
-      normalizedLink
-    );
-  }
-
-  /*
-    Também registramos a URL da página-fonte.
-  */
-  if (
-    normalizedSourceLink
-  ) {
-    seenLinks.add(
-      normalizedSourceLink
-    );
-  }
-
-  if (
-    jobKey !== '|'
-  ) {
-    seenJobs.add(
-      jobKey
-    );
-  }
-
-  deduped.push(
-    row
+      return (
+        a.jobTitle ||
+        ''
+      ).localeCompare(
+        b.jobTitle ||
+        '',
+        'pt-BR'
+      );
+    }
   );
+
+  // ==========================================================
+  // SALVAR
+  // ==========================================================
+
+  fs.writeFileSync(
+    OUTPUT,
+    JSON.stringify(
+      finalJobs,
+      null,
+      2
+    ),
+    'utf8'
+  );
+
+  // ==========================================================
+  // CONTAGEM POR FONTE
+  // ==========================================================
+
+  const bySource = {};
+
+  for (
+    const job of finalJobs
+  ) {
+    for (
+      const source of (
+        job.sources ||
+        [job.source]
+      )
+    ) {
+      if (!source) {
+        continue;
+      }
+
+      bySource[source] =
+        (
+          bySource[source] ||
+          0
+        ) +
+        1;
+    }
+  }
+
+  // ==========================================================
+  // RESUMO
+  // ==========================================================
+
+  console.log('');
+  console.log(
+    '=========================================='
+  );
+  console.log(
+    '[merge] RESUMO FINAL'
+  );
+  console.log(
+    '=========================================='
+  );
+
+  console.log(
+    `[merge] arquivos configurados: ${FILES.length}`
+  );
+
+  console.log(
+    `[merge] vagas recebidas: ${allJobs.length}`
+  );
+
+  console.log(
+    `[merge] duplicadas encontradas: ${duplicates}`
+  );
+
+  console.log(
+    `[merge] TOTAL FINAL ÚNICO: ${finalJobs.length}`
+  );
+
+  console.log('');
+  console.log(
+    '[merge] POR FONTE:'
+  );
+
+  for (
+    const filename of FILES
+  ) {
+    const source =
+      getSourceFromFile(
+        filename
+      );
+
+    const received =
+      stats[filename]
+        ?.received ||
+      0;
+
+    console.log(
+      `[merge] ${source}: ${received}`
+    );
+  }
+
+  console.log('');
+  console.log(
+    `[merge] arquivo: ${OUTPUT}`
+  );
+
+  console.log(
+    '=========================================='
+  );
+  console.log('');
 }
 
-// ============================================================
-// ORDENAÇÃO
-// ============================================================
-
-deduped.sort(
-  (a, b) => {
-    /*
-      1. Empresas da lista primeiro
-    */
-
-    const listOrder =
-      (
-        a.na_lista ===
-        b.na_lista
-      )
-        ? 0
-        : (
-            a.na_lista ===
-            'Sim'
-          )
-            ? -1
-            : 1;
-
-    if (
-      listOrder !== 0
-    ) {
-      return listOrder;
-    }
-
-    /*
-      2. Mais recentes primeiro
-    */
-
-    const dateA =
-      a.publicado ||
-      '';
-
-    const dateB =
-      b.publicado ||
-      '';
-
-    if (
-      dateA !== dateB
-    ) {
-      return dateB.localeCompare(
-        dateA
-      );
-    }
-
-    /*
-      3. Plataforma
-    */
-
-    const platformOrder =
-      String(
-        a.plataforma
-      ).localeCompare(
-        String(
-          b.plataforma
-        )
-      );
-
-    if (
-      platformOrder !== 0
-    ) {
-      return platformOrder;
-    }
-
-    /*
-      4. Empresa
-    */
-
-    const companyOrder =
-      String(
-        a.empresa
-      ).localeCompare(
-        String(
-          b.empresa
-        )
-      );
-
-    if (
-      companyOrder !== 0
-    ) {
-      return companyOrder;
-    }
-
-    /*
-      5. Cargo
-    */
-
-    return String(
-      a.titulo_vaga
-    ).localeCompare(
-      String(
-        b.titulo_vaga
-      )
-    );
-  }
-);
-
-// ============================================================
-// SALVA RESULTADO FINAL
-// ============================================================
-
-fs.writeFileSync(
-  path.join(
-    DIR,
-    'vagas_final.json'
-  ),
-  JSON.stringify(
-    deduped,
-    null,
-    2
-  )
-);
-
-// ============================================================
-// LOGS
-// ============================================================
-
-const finalGupy =
-  deduped.filter(
-    row =>
-      row.plataforma ===
-      'Gupy'
-  ).length;
-
-const finalInHire =
-  deduped.filter(
-    row =>
-      row.plataforma ===
-      'InHire'
-  ).length;
-
-const finalNerdin =
-  deduped.filter(
-    row =>
-      row.plataforma ===
-      'Nerdin'
-  ).length;
-
-const finalTrampos =
-  deduped.filter(
-    row =>
-      row.plataforma ===
-      'Trampos'
-  ).length;
-
-const finalMentoraDados =
-  deduped.filter(
-    row =>
-      row.plataforma ===
-      'Mentora Dados'
-  ).length;
-
-const withAlert =
-  deduped.filter(
-    row =>
-      row.alerta
-  ).length;
-
-const withExternalApply =
-  deduped.filter(
-    row =>
-      row.link_candidatura
-  ).length;
-
-console.log(
-  ''
-);
-
-console.log(
-  '=========================================='
-);
-
-console.log(
-  '[merge] RESUMO FINAL'
-);
-
-console.log(
-  `[merge] Gupy recebidas: ${gupy.length}`
-);
-
-console.log(
-  `[merge] InHire recebidas: ${inhire.length}`
-);
-
-console.log(
-  `[merge] Nerdin recebidas: ${nerdin.length}`
-);
-
-console.log(
-  `[merge] Trampos recebidas: ${trampos.length}`
-);
-
-console.log(
-  `[merge] Mentora Dados recebidas: ${mentoradados.length}`
-);
-
-console.log(
-  `[merge] Total antes do dedupe: ${all.length}`
-);
-
-console.log(
-  `[merge] duplicadas por link: ${duplicateByLink}`
-);
-
-console.log(
-  `[merge] duplicadas por empresa+título: ${duplicateByJob}`
-);
-
-console.log(
-  `[merge] TOTAL FINAL: ${deduped.length}`
-);
-
-console.log(
-  ''
-);
-
-console.log(
-  `[merge] Gupy finais: ${finalGupy}`
-);
-
-console.log(
-  `[merge] InHire finais: ${finalInHire}`
-);
-
-console.log(
-  `[merge] Nerdin finais: ${finalNerdin}`
-);
-
-console.log(
-  `[merge] Trampos finais: ${finalTrampos}`
-);
-
-console.log(
-  `[merge] Mentora Dados finais: ${finalMentoraDados}`
-);
-
-console.log(
-  `[merge] vagas com link direto de candidatura: ${withExternalApply}`
-);
-
-console.log(
-  `[merge] vagas com alerta: ${withAlert}`
-);
-
-console.log(
-  ''
-);
-
-console.log(
-  '[merge] wrote -> vagas_final.json'
-);
+main();
