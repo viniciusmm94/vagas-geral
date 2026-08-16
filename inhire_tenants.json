@@ -3,7 +3,7 @@
     "company": "Aarin",
     "tenantName": "Aarin Techfin",
     "slug": "aarin",
-    "jobsCount": 9
+    "jobsCount": 14
   },
   {
     "company": "Adyen",
@@ -15,7 +15,7 @@
     "company": "Alelo",
     "tenantName": "Alelo",
     "slug": "alelo",
-    "jobsCount": 18
+    "jobsCount": 21
   },
   {
     "company": "Algar Tech",
@@ -27,7 +27,7 @@
     "company": "Alice",
     "tenantName": "Alice",
     "slug": "alice",
-    "jobsCount": 18
+    "jobsCount": 16
   },
   {
     "company": "Alicerce Educação",
@@ -57,13 +57,13 @@
     "company": "Avenue",
     "tenantName": "Avenue",
     "slug": "avenue",
-    "jobsCount": 16
+    "jobsCount": 18
   },
   {
     "company": "Avenue code",
     "tenantName": "Avenue",
     "slug": "avenue",
-    "jobsCount": 16
+    "jobsCount": 18
   },
   {
     "company": "Avivatec",
@@ -75,7 +75,7 @@
     "company": "Banco Pine",
     "tenantName": "Banco Pine",
     "slug": "bancopine",
-    "jobsCount": 12
+    "jobsCount": 13
   },
   {
     "company": "Bemobi",
@@ -87,7 +87,7 @@
     "company": "Bionexo",
     "tenantName": "Bionexo",
     "slug": "bionexo",
-    "jobsCount": 23
+    "jobsCount": 22
   },
   {
     "company": "Bradesco",
@@ -99,7 +99,7 @@
     "company": "BRQ",
     "tenantName": "BRQ",
     "slug": "brq",
-    "jobsCount": 80
+    "jobsCount": 83
   },
   {
     "company": "BRQ Digital Solutions",
@@ -117,13 +117,13 @@
     "company": "CERC",
     "tenantName": "CERC",
     "slug": "cerc",
-    "jobsCount": 21
+    "jobsCount": 20
   },
   {
     "company": "CERC Central de Recebíveis",
     "tenantName": "CERC",
     "slug": "cerc",
-    "jobsCount": 21
+    "jobsCount": 20
   },
   {
     "company": "Cielo",
@@ -141,7 +141,7 @@
     "company": "Cobli",
     "tenantName": "Cobli",
     "slug": "cobli",
-    "jobsCount": 10
+    "jobsCount": 9
   },
   {
     "company": "Cogna",
@@ -159,7 +159,7 @@
     "company": "Contabilizei",
     "tenantName": "Contabilizei",
     "slug": "contabilizei",
-    "jobsCount": 58
+    "jobsCount": 57
   },
   {
     "company": "Convenia",
@@ -189,7 +189,7 @@
     "company": "CSU CardSystem",
     "tenantName": "CSU",
     "slug": "csu",
-    "jobsCount": 32
+    "jobsCount": 29
   },
   {
     "company": "Cubos",
@@ -201,7 +201,7 @@
     "company": "Dafiti",
     "tenantName": "Dafiti",
     "slug": "dafiti",
-    "jobsCount": 15
+    "jobsCount": 20
   },
   {
     "company": "DB1",
@@ -213,7 +213,7 @@
     "company": "Deal",
     "tenantName": "Deal Group",
     "slug": "deal",
-    "jobsCount": 6
+    "jobsCount": 5
   },
   {
     "company": "Digix",
@@ -231,19 +231,19 @@
     "company": "Dock",
     "tenantName": "Dock",
     "slug": "dock",
-    "jobsCount": 15
+    "jobsCount": 13
   },
   {
     "company": "dti digital",
     "tenantName": "dti digital",
     "slug": "dtidigital",
-    "jobsCount": 16
+    "jobsCount": 15
   },
   {
     "company": "e-Core",
     "tenantName": "e-Core",
     "slug": "ecore",
-    "jobsCount": 15
+    "jobsCount": 11
   },
   {
     "company": "Ebanx",
@@ -273,13 +273,13 @@
     "company": "Enjoei",
     "tenantName": "Enjoei",
     "slug": "enjoei",
-    "jobsCount": 10
+    "jobsCount": 11
   },
   {
     "company": "Exati Tecnologia",
     "tenantName": "Exati",
     "slug": "exati",
-    "jobsCount": 6
+    "jobsCount": 5
   },
   {
     "company": "FALCONI",
@@ -291,7 +291,7 @@
     "company": "Fbiz",
     "tenantName": "Fbiz",
     "slug": "fbiz",
-    "jobsCount": 1
+    "jobsCount": 2
   },
   {
     "company": "Fcamara",
@@ -357,7 +357,7 @@
     "company": "InstaCarro.com",
     "tenantName": "InstaCarro",
     "slug": "instacarro",
-    "jobsCount": 5
+    "jobsCount": 4
   },
   {
     "company": "Involves",
@@ -375,7 +375,7 @@
     "company": "KPMG",
     "tenantName": "KPMG",
     "slug": "kpmg",
-    "jobsCount": 140
+    "jobsCount": 142
   },
   {
     "company": "Labi Exames",
@@ -411,7 +411,7 @@
     "company": "Livelo",
     "tenantName": "Livelo",
     "slug": "livelo",
-    "jobsCount": 16
+    "jobsCount": 18
   },
   {
     "company": "Loft",
@@ -423,25 +423,25 @@
     "company": "Loggi",
     "tenantName": "Loggi",
     "slug": "loggi",
-    "jobsCount": 8
+    "jobsCount": 6
   },
   {
     "company": "Magazine Luiza",
     "tenantName": "Magazine Luiza",
     "slug": "magazineluiza",
-    "jobsCount": 20
+    "jobsCount": 17
   },
   {
     "company": "Matera",
     "tenantName": "Matera",
     "slug": "matera",
-    "jobsCount": 6
+    "jobsCount": 5
   },
   {
     "company": "Mazzatech Systems & Outsourcing",
     "tenantName": "mazzatech",
     "slug": "mazzatech",
-    "jobsCount": 94
+    "jobsCount": 82
   },
   {
     "company": "Meliuz",
@@ -453,7 +453,7 @@
     "company": "MJV Technology & Innovation",
     "tenantName": "MJV INNOVATION",
     "slug": "mjv",
-    "jobsCount": 62
+    "jobsCount": 61
   },
   {
     "company": "Mundiale",
@@ -501,7 +501,7 @@
     "company": "Objective Solutions",
     "tenantName": "Objective",
     "slug": "objective",
-    "jobsCount": 11
+    "jobsCount": 9
   },
   {
     "company": "Olist",
@@ -537,25 +537,25 @@
     "company": "Pitang",
     "tenantName": "Pitang",
     "slug": "pitang",
-    "jobsCount": 13
+    "jobsCount": 14
   },
   {
     "company": "Platform Builders",
     "tenantName": "Platform Builders",
     "slug": "platformbuilders",
-    "jobsCount": 10
+    "jobsCount": 5
   },
   {
     "company": "Pravaler",
     "tenantName": "Pravaler",
     "slug": "pravaler",
-    "jobsCount": 40
+    "jobsCount": 37
   },
   {
     "company": "Radix",
     "tenantName": "Radix",
     "slug": "radix",
-    "jobsCount": 124
+    "jobsCount": 121
   },
   {
     "company": "Raro Labs",
@@ -567,13 +567,13 @@
     "company": "Reclame aqui",
     "tenantName": "Reclame AQUI",
     "slug": "reclameaqui",
-    "jobsCount": 29
+    "jobsCount": 30
   },
   {
     "company": "Remessa Online",
     "tenantName": "Remessa Online",
     "slug": "remessaonline",
-    "jobsCount": 3
+    "jobsCount": 5
   },
   {
     "company": "RNP",
@@ -585,19 +585,19 @@
     "company": "Samsung Mobile",
     "tenantName": "Samsung",
     "slug": "samsung",
-    "jobsCount": 12
+    "jobsCount": 9
   },
   {
     "company": "Samsung SDS",
     "tenantName": "Samsung",
     "slug": "samsung",
-    "jobsCount": 12
+    "jobsCount": 9
   },
   {
     "company": "Semantix",
     "tenantName": "Semantix",
     "slug": "semantix",
-    "jobsCount": 66
+    "jobsCount": 64
   },
   {
     "company": "Sidia Instituto de Ciência e Tecnologia",
@@ -609,13 +609,13 @@
     "company": "Sky.one",
     "tenantName": "Skyone",
     "slug": "skyone",
-    "jobsCount": 14
+    "jobsCount": 17
   },
   {
     "company": "Solutis Tecnologias",
     "tenantName": "Solutis",
     "slug": "solutis",
-    "jobsCount": 16
+    "jobsCount": 13
   },
   {
     "company": "Stone",
@@ -693,7 +693,7 @@
     "company": "Unico IDTech",
     "tenantName": "Unico ",
     "slug": "unico",
-    "jobsCount": 11
+    "jobsCount": 12
   },
   {
     "company": "Venturus",
@@ -711,7 +711,7 @@
     "company": "Warren",
     "tenantName": "Warren",
     "slug": "warren",
-    "jobsCount": 3
+    "jobsCount": 2
   },
   {
     "company": "will bank",

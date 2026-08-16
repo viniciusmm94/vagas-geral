@@ -17,6 +17,7 @@ https://inhire.app/static/js/main.77e48b4.js
 https://inhire.app/static/js/main.865f49b.js
 https://inhire.app/static/js/main.cd9fea0a.js
 https://180seguros.inhire.app/vagas/2f707a62-5338-448f-a3b3-29822679a9fa/brand-designer-pleno?source=linkedin
+https://2bizcompany.inhire.app/vagas/4972ebd4-7970-4a05-a0b7-71d8180d912f/sdr-pleno-home-office
 https://2future.inhire.app/
 https://2future.inhire.app/.well-known/ai-plugin.json
 https://2future.inhire.app/.well-known/assetlinks.json
@@ -549,6 +550,7 @@ https://amcom.inhire.app/static/js/main.5ea03c3.js
 https://amcom.inhire.app/static/js/main.7ba205e.js
 https://amcom.inhire.app/static/js/main.e44895ba6.js
 https://amcom.inhire.app/vagas
+https://amcom.inhire.app/vagas/01229d9e-a7c6-4922-8da8-61eb99132971/pessoa-product-owner-senior-com-foco-em-ia
 https://amcom.inhire.app/vagas/7aa28d97-5fec-4ea1-b3ae-b289903cb60a/pessoa-analista-de-negocios-e-comercial-com-ingles
 https://amcom.inhire.app/vagas/e73f61c1-0810-4d61-b549-c6edf0d8bc21/team-leader-de-sustentacao-de-sistemas-hibrido-em-alphavillesp
 https://amcom.inhire.app/vagas?hsCtaAttrib=191426303613
@@ -1680,6 +1682,7 @@ https://brq.inhire.app/css/bundle.60a3e8d7.css
 https://brq.inhire.app/media/icons/favicon.ico
 https://brq.inhire.app/static/js/i18n-en.3cfd432f.chunk.js
 https://brq.inhire.app/static/js/main.9c595cd1.js
+https://brq.inhire.app/vagas/be98209b-5610-4470-b6e2-c0a29a3622e5/analista-financeiro-pleno
 https://brq.inhire.app/vagas/ca92661c-a7c8-4878-911a-0cae0726c301/motion-designer-jr
 https://caf.inhire.app/
 https://capef.inhire.app/
@@ -2020,6 +2023,7 @@ https://cobli.inhire.app/static/js/main.9d282c7.js
 https://cobli.inhire.app/vagas
 https://cobli.inhire.app/vagas?utm_medium=social&utm_source=linkedin&utm_campaign=desenvolvimento-vagas
 https://cobli.inhire.app/vagas?utm_medium=social&utm_source=linkedin&utm_campaign=sucesso-jovem-aprendiz-vagas
+https://compagas.inhire.app/vagas/aef5a123-7303-4a1a-b048-ae10467b3c21/consultor-de-vendas-senior-or-comercio
 https://construtoraelevacao.inhire.app/
 https://construtorapatriani.inhire.app/vagas
 https://contaazul.inhire.app/
@@ -2248,6 +2252,7 @@ https://cubosacademy.inhire.app/vagas/
 https://cubosacademy.inhire.app/vagas/1e24b7dd-595c-4db8-a11c-4307065565a0/assistente-de-recrutamento-e-selecao-de-estudantes?source=linkedin
 https://dartz.inhire.app/vagas/6afdf5ff-17f5-47e6-a625-b8f1951d1845/senior-controlling-analyst
 https://dartz.inhire.app/vagas/a161fc59-ae9c-4c3c-9d6c-f56992e3a38c/analista-de-comercio-exterior-pleno
+https://dataside.inhire.app/vagas/847716a4-d58b-4f2d-a35e-daea3bee09c1/consultora-sap-ibp-senior
 https://db1.inhire.app/
 https://db1.inhire.app/.well-known/ai-plugin.json
 https://db1.inhire.app/.well-known/assetlinks.json
@@ -2400,6 +2405,7 @@ https://deal.inhire.app/vagas/4559d499-2a6a-4fb3-9e8f-13021ade15d1/-
 https://deal.inhire.app/vagas/7a6a72a0-8944-459e-90f6-1b2768e80376/pessoa-engenheiro-de-dados-junior
 https://deal.inhire.app/vagas/7a6a72a0-8944-459e-90f6-1b2768e80376/pessoa-engenheiro-de-dados-junior?trk=public_post_comment-text
 https://deal.inhire.app/vagas/991a2d45-107e-4d40-ae11-f3a8de8a8a50/product-designer-senior
+https://deal.inhire.app/vagas/f40e920d-d8e6-444b-9131-8988dfda3b86/tech-lead-cloud-aws
 https://dealersites.inhire.app/
 https://dealersites.inhire.app/.well-known/ai-plugin.json
 https://dealersites.inhire.app/.well-known/assetlinks.json
@@ -2820,6 +2826,7 @@ https://emergeventures.inhire.app/media/icons/favicon.ico
 https://emergeventures.inhire.app/static/js/i18n-en.2c09f17.chunk.js
 https://emergeventures.inhire.app/static/js/main.2c09f17.js
 https://emergeventures.inhire.app/vagas/0244a215-0461-48c4-b5a6-c372fa1508fe/banco-de-talentos-designer-grafico
+https://enjoei.inhire.app/vagas/ca6c4263-7b7b-4676-8c6e-ab9eded15b7d/analista-de-experiencia-do-cliente-pleno
 https://eqi.inhire.app/
 https://eqi.inhire.app/css/bundle.74ead9a.css
 https://eqi.inhire.app/css/bundle.ebd2815.css
@@ -3147,27 +3154,43 @@ https://files.inhire.app/og-images/venturus.png
 https://files.inhire.app/og-images/vortx.png
 https://files.inhire.app/og-images/willbank.png
 https://files.inhire.app/pages/career/banner_deal.png
+https://files.inhire.app/pages/career/banner_gx2.png
 https://files.inhire.app/pages/career/banner_iconit.png
+https://files.inhire.app/pages/career/banner_jota.png
+https://files.inhire.app/pages/career/banner_mjv.png
+https://files.inhire.app/pages/career/banner_residclub.png
+https://files.inhire.app/pages/career/banner_skopiadigital.png
+https://files.inhire.app/pages/career/banner_telavita.png
+https://files.inhire.app/pages/career/logo_compagas.png
 https://files.inhire.app/pages/career/logo_deal.png
 https://files.inhire.app/pages/career/logo_extremegroup.png
+https://files.inhire.app/pages/career/logo_gx2.png
 https://files.inhire.app/pages/career/logo_iconit.png
 https://files.inhire.app/pages/career/logo_infleet.png
+https://files.inhire.app/pages/career/logo_jota.jpeg
 https://files.inhire.app/pages/career/logo_lighthouseit.png
 https://files.inhire.app/pages/career/logo_livemode.png
 https://files.inhire.app/pages/career/logo_mazzatech.png
+https://files.inhire.app/pages/career/logo_mjv.png
 https://files.inhire.app/pages/career/logo_pitang.png
 https://files.inhire.app/pages/career/logo_platformbuilders.png
 https://files.inhire.app/pages/career/logo_queropassagem.png
+https://files.inhire.app/pages/career/logo_residclub.png
 https://files.inhire.app/pages/career/logo_sallve.png
 https://files.inhire.app/pages/career/logo_skopiadigital.png
 https://files.inhire.app/pages/career/logo_solutis.png
+https://files.inhire.app/pages/career/logo_telavita.png
 https://files.inhire.app/pages/career/logo_tinnova.png
 https://files.inhire.app/pages/career/vagasbyintera_nuvemshop-tiendanube-og.png
 https://files.inhire.app/robots.txt
 https://files.inhire.app/tenant-public-files/bibliotecacatolica/bc_banner_(1)*293ac570-e983-434b-a4ab-ee1a7da68ed4.png
 https://files.inhire.app/tenant-public-files/bibliotecacatolica/lumine_minha-biblioteca-catolica-logo*ccca40f2-c6b6-407d-a194-883b3758ab2e.png
+https://files.inhire.app/tenant-public-files/brq/capa_brq*b6908f2d-851a-4b7b-a725-1780484d4169.png
+https://files.inhire.app/tenant-public-files/brq/logo_brq_inhire_-_Editado*4378f262-055f-4753-a74f-1d8d4101848b.png
 https://files.inhire.app/tenant-public-files/grupofeg/Camada_1-15_(1)*7a45028f-b59a-4d27-8f96-04b2ff8232d2.png
 https://files.inhire.app/tenant-public-files/infleet/WhatsApp_Image_2026-04-14_at_154811*64288e0e-7140-408a-b5de-58d24042d2e1.jpeg
+https://files.inhire.app/tenant-public-files/jobler/Banner_Pessoal*cdfa0d44-6460-46ac-9078-d1e440397ddb.png
+https://files.inhire.app/tenant-public-files/jobler/LOGO3Dsemfundo*f0998d24-14a0-456f-9ae1-8629d767f612.png
 https://files.inhire.app/tenant-public-files/procfit/Imagem10*918df91b-5fe0-4dd7-9077-7e7ef97aa179.png
 https://files.inhire.app/tenant-public-files/procfit/Imagem11*9885ec88-0400-4434-9b2f-46845a1c17bf.png
 https://files.inhire.app/tenant-public-files/procfit/Imagem12*f03e8ff4-36bd-4c69-a80e-0e440ebb9ef4.png
@@ -3669,6 +3692,7 @@ https://goflow.inhire.app/azcorp/vagas
 https://goflow.inhire.app/e-machine/vagas
 https://goflow.inhire.app/vagas
 https://gogroup.inhire.app/vagas
+https://growdev.inhire.app/vagas/e92b0961-080b-4315-9502-6f3ccc111a42/product-owner-pleno-or-e-commerce
 https://grupoagcapital.inhire.app/vagas/f827b997-cd66-4b78-a76a-2e2074ae8aef/assistente-tributario-de-folha-de-pagamento-florianopolis?indeed=organic
 https://grupoboticario.inhire.app/vagas/06a18e37-d998-4aa9-a5e0-36a760688553/especialista-ii-em-solucoes-de-credito-or-analises-and-performance?indeed=organic
 https://grupocentral.inhire.app/css/bundle.36e07bec3.css
@@ -4028,6 +4052,7 @@ https://gx2.inhire.app/static/js/main.ee90cf9.js
 https://gx2.inhire.app/vagas/3dafb6a3-ec3e-4eaa-8402-504ecdc2859c/or-people-partner-or-mid-level-or-porto-alegre-rs
 https://gx2.inhire.app/vagas/3ffa6210-74ff-4a31-932c-7e12eb9c145c/or-front-end-developer-(reactnext)-or-mid-level?indeed=organic
 https://gx2.inhire.app/vagas/7ac1b9f0-0bc0-4108-9160-05c38f15a679/or-fullstack-developer-or-senior-or-porto-alegre-rr
+https://gx2.inhire.app/vagas/94e89a85-3b72-4fba-886e-0f59c5602d00/or-product-owner-or-senior
 https://gx2.inhire.app/vagas/e001fb97-4453-4af6-8cc4-29b32c6db472/or-software-architect-or-senior-or-porto-alegre-rs
 https://harpia.inhire.app/
 https://heads.inhire.app/css/bundle.87f8521.css
@@ -4335,6 +4360,7 @@ https://industriasanhembi.inhire.app/vagas/c97421f5-89eb-48af-b43f-4c59b9f42712/
 https://infleet.inhire.app/vagas/4485194b-8913-4002-b6ce-356e5a66c31f/especialista-de-customer-marketing-or-foco-em-advocacy
 https://infleet.inhire.app/vagas/a4980abf-356c-4336-84ce-d37ae46801d3/estagio-fullstack-elixir?indeed=organic
 https://infotecbrasil.inhire.app/vagas/ae098136-7592-4c3a-a5d5-1effd6bad331/auxiliar-administrativo-de-treinamento-rio-de-janeirorj?indeed=organic
+https://infotecbrasil.inhire.app/vagas/b1fafeec-bfcd-4925-ae10-556d43fa0c87/analista-de-contratos-home-office
 http://inhub.inhire.app/
 https://innoveahub.inhire.app/css/bundle.80281fa.css
 https://innoveahub.inhire.app/css/bundle.a7146fa.css
@@ -4612,6 +4638,7 @@ https://jeitto.inhire.app/static/js/main.f389042.js
 https://jeitto.inhire.app/static/js/main.f67f75b.js
 https://jeitto.inhire.app/vagas
 https://jeitto.inhire.app/vagas/8a7b9e1a-b2b8-45e8-b4dc-8d81e3db2428/programa-de-estagio
+https://jobler.inhire.app/vagas/ab3196f7-51c2-4b2c-9fe4-36172bd9e14d/ia-engineer
 https://jota.inhire.app/
 https://jota.inhire.app/.well-known/ai-plugin.json
 https://jota.inhire.app/.well-known/assetlinks.json
@@ -4707,6 +4734,7 @@ https://jota.inhire.app/vagas/08eeeb0d-476e-4e3d-88a0-37b33d151018/reporter-site
 https://jota.inhire.app/vagas/0dba491f-ce3b-4250-b50b-e9211343b9cd/analista-de-relacoes-institucionais-mercado-financeiro
 https://jota.inhire.app/vagas/2d20f506-3730-415d-9386-333f8e04a383/assistente-administrativo-eventos-e-facilities
 https://jota.inhire.app/vagas/2e18075b-be3f-48da-9c62-2c83eb7c84d3/reporter-de-saude-em-brasilia
+https://jota.inhire.app/vagas/35048555-832d-45fc-a0f9-7c0eeea9fd82/analista-de-marketing-e-comunicacao
 https://jota.inhire.app/vagas/404ffb7d-9136-4c73-88a7-df807f7b354f/analista-de-relacoes-institucionais-atendimento-energia-outros
 https://jota.inhire.app/vagas/4a388114-7c33-4991-9b0d-63ae8447c972/estagio-em-jornalismo-sao-paulo
 https://jota.inhire.app/vagas/4b9ce83f-e7cf-4d43-a759-5a1a86815eb7/executivoa-de-vendas-internas-sao-paulo
@@ -5352,6 +5380,7 @@ https://luzandreyaconsultoria.inhire.app/media/icons/favicon.ico
 https://luzandreyaconsultoria.inhire.app/robots.txt
 https://luzandreyaconsultoria.inhire.app/sitemap.xml
 https://luzandreyaconsultoria.inhire.app/vagas
+https://lwsa.inhire.app/bling/vagas/3c1138dc-f09d-4d77-aaa8-cbbada8158dc/bling-i-especialista-de-desenvolvimento-i-golangphp-sistemas-financeiros-i-remoto
 https://lwsa.inhire.app/css/bundle.68966a3c.css
 https://lwsa.inhire.app/locaweb/vagas
 https://lwsa.inhire.app/manifest.json
@@ -5595,7 +5624,9 @@ https://mazzatech.inhire.app/static/js/main.552ca41.js
 https://mazzatech.inhire.app/static/js/main.ecf67b2.js
 https://mazzatech.inhire.app/vagas
 https://mazzatech.inhire.app/vagas/b3568500-9741-480f-a1a2-7a2fed886c59/6c59-desenvolvedor-fullstack-junior
+https://mazzatech.inhire.app/vagas/d0885671-0808-4f3d-9040-d90dbe7ca076/desenvolvedor-fullstack-pleno
 https://mazzatech.inhire.app/vagas/f11739d6-f318-44ee-ae48-041536138457/0f28-consultor-sd-sr-ams-100percent-remoto
+https://mazzatech.inhire.app/vagas/fd96a2a3-68e3-4e78-9f78-aac95c3a6068/a1c2-sr-fraud-prevention-analyst
 https://mb.inhire.app/
 https://mb.inhire.app/.well-known/ai-plugin.json
 https://mb.inhire.app/.well-known/assetlinks.json
@@ -5707,8 +5738,10 @@ https://mirum.inhire.app/static/js/main.d71d38e.js
 https://mirum.inhire.app/static/js/main.e8f4885.js
 https://mirum.inhire.app/vagas/879fdc1e-8eaa-48dd-96c4-7babbd8dbf24/est%C3%A1gio-em-tecnologia-(front-end
 https://mirum.inhire.app/vagas/879fdc1e-8eaa-48dd-96c4-7babbd8dbf24/est%C3%A1gio-em-tecnologia-(front-end)
+https://mjv.inhire.app/vagas/4d6b50fa-dfd3-4dae-89d6-2ca455012df0/uiux-designer-foco-em-webmobile-and-design-system
 https://mjv.inhire.app/vagas/653b0017-a5d4-4014-a8ef-ab5009e6f17a/pessoa-desenvolvedora-java-(spring-bootaws)?indeed=organic
 https://mjv.inhire.app/vagas/9896b887-41ed-4e0b-9518-6954264564f8/pessoa-desenvolvedora-fullstack-(javanode)?indeed=organic
+https://mjv.inhire.app/vagas/e9c238fd-258f-4a30-bb4b-272043b80959/pessoa-desenvolvedora-fullstack-angularnode
 https://mksolutions.inhire.app/
 https://mksolutions.inhire.app/vagas
 https://mksolutions.inhire.app/vagas/372a17d1-2615-4cfe-90e7-ccc029467771/atendente-de-suporte-tecnico
@@ -5888,6 +5921,7 @@ https://nibo.inhire.app/robots.txt
 https://nibo.inhire.app/sitemap.xml
 https://nibo.inhire.app/static/js/main.3f3c81f.js
 https://nibo.inhire.app/static/js/main.ccefcdf65.js
+https://nibo.inhire.app/vagas/89f1fbde-97f5-44b3-b0ba-2a697ecbb1d6/programa-de-estagio-sucesso-do-cliente-100percent-remoto-banco-de-talentos
 https://nibo.inhire.app/vagas/a270fdf9-7daf-41d5-9d3a-4273b693de94/programa-de-jovem-aprendiz
 https://nibo.inhire.app/vagas/a3a7a48f-cca2-4649-915d-9b39ae314712/programa-de-estagio-sucesso-do-cliente-100percent-remoto?source=linkedin
 https://nibo.inhire.app/vagas/d1ec1232-7483-40bf-bc2b-45f49bcaaf70/analista-de-desenvolvimento-dev-.net-c-100percent-remoto?indeed=organic
@@ -5930,6 +5964,8 @@ https://nomadglobal.inhire.app/static/js/main.dc5d5834.js
 https://nomadglobal.inhire.app/vagas
 https://nomadglobal.inhire.app/vagas/bd92401d-55c9-401c-bca2-a4efb26f30b7/banco-de-talentos-?-indique-ou-candidate-se--??
 https://nomadglobal.inhire.app/vagas/d58cc0ce-ed9c-41b6-9cf4-a603b74a6717/analista-de-atendimento-ao-cliente-i-cx-n2?utm_source=remotar
+https://nstech.inhire.app/vagas/485bfae8-520f-49a5-bb8f-06f0d0d558c5/product-owner-or-vaga-aberta-para-pcd-e-nao-pcd-or-remoto
+https://nstech.inhire.app/vagas/e93dc321-de3e-422c-afa5-c2c62110c2b5/solution-design-senior-or-remoto
 https://nts.inhire.app/
 https://nts.inhire.app/css/bundle.a8a75cd.css
 https://nts.inhire.app/css/bundle.e588d42eb.css
@@ -6104,6 +6140,7 @@ https://objective.inhire.app/robots.txt
 https://objective.inhire.app/sitemap.xml
 https://objective.inhire.app/static/js/main.3b6cfe7.js
 https://objective.inhire.app/vagas/442139d7-fcc3-491d-9d54-6e5ecbf3ee9a/squad-desenvolvedora-pl-or-elixir
+https://objective.inhire.app/vagas/5b5bca3b-8664-4d1e-b8aa-a8dd5c7156bf/ux-researcher-or-sr-orfrances-fluente-remoto-pj
 https://objective.inhire.app/vagas/e89835cd-2073-4f72-bb01-c03ac8df18cb/pmo-project-management-office-sr-seguros-or-ingles-avancado-remoto
 https://objective.inhire.app/vagas/f2f66b21-9f23-4988-ba27-9287147f2e28/desenvolvedor(a)-sr-or-java-or-remoto?indeed=organic
 https://oceandrop.inhire.app/css/bundle.0ba7af0f9.css
@@ -6766,6 +6803,7 @@ https://radix.inhire.app/vagas/1f621108-7ed9-46bb-b991-5bb3a2eb3a20/-
 https://radix.inhire.app/vagas/216d6d1d-6541-4c8a-ae75-30e5fc113833/estagio-em-dados
 https://radix.inhire.app/vagas/216d6d1d-6541-4c8a-ae75-30e5fc113833/estagio-em-dados?source=linkedin
 https://radix.inhire.app/vagas/6447d293-b89b-43f5-a1ee-d9f8bd539ddd/-
+https://radix.inhire.app/vagas/6621d567-d533-4fee-a91c-65019dcc4b5e/profissional-de-coordenacao-de-projetos-ot-automacao-industrial
 https://radix.inhire.app/vagas/8d930ebc-4ea4-48d0-bbcf-8d503b69d355/estagio-em-desenvolvimento
 https://radix.inhire.app/vagas/8d930ebc-4ea4-48d0-bbcf-8d503b69d355/estagio-em-desenvolvimento?source=linkedin
 https://radix.inhire.app/vagas/99e81ce2-cb51-4009-9b13-68b4d9ca885e/profissional-de-engenharia-de-seguranca-de-processo?indeed=organic
@@ -6835,6 +6873,7 @@ https://reclameaqui.inhire.app/sitemap.xml
 https://reclameaqui.inhire.app/static/js/main.8152fef.js
 https://reclameaqui.inhire.app/vagas
 https://reclameaqui.inhire.app/vagas/cb527abb-22ae-48f9-b681-d747cdcebca5/analista-recrutamento-and-selecao-sr-(pjfee-based)?indeed=organic
+https://reclameaqui.inhire.app/vagas/ffafe4bd-0410-4451-aa3a-a78a8cf67c97/product-software-engineer
 https://reidopitaco.inhire.app/
 https://reidopitaco.inhire.app/.well-known/ai-plugin.json
 https://reidopitaco.inhire.app/.well-known/assetlinks.json
@@ -6946,6 +6985,7 @@ https://residclub.inhire.app/static/js/main.3b7a33c.js
 https://residclub.inhire.app/static/js/main.87f8521.js
 https://residclub.inhire.app/static/js/main.c36645e.js
 https://residclub.inhire.app/vagas
+https://residclub.inhire.app/vagas/193ee72b-41e3-4bcd-ac22-272abbb05944/analista-de-revenue-operations-revops-plenosenior
 https://rhitmotech.inhire.app/
 https://rhitmotech.inhire.app/.well-known/ai-plugin.json
 https://rhitmotech.inhire.app/.well-known/assetlinks.json
@@ -7328,6 +7368,8 @@ https://skeelo.inhire.app/vagas/b506ac0b-321c-4c55-844f-627a6334d77d/pessoa-anal
 https://skeelo.inhire.app/vagas/c2700467-de33-4862-9117-5d35c5cd57c5/site-reability-engineer-sre
 https://skeelo.inhire.app/vagas/d5a0f118-7f64-4344-8ea4-eec405901c6a/pessoa-devops
 https://skeelo.inhire.app/vagas/e100448f-2f33-4897-8546-6b6202744a1c/pessoa-engenheira-de-qa-pleno
+https://skopiadigital.inhire.app/vagas/6b80e159-f210-4648-8c4a-e5dcc00b56a6/product-owner-senior
+https://skopiadigital.inhire.app/vagas/ee81dc25-67ca-4350-9774-481f808f5c9a/product-owner-senior
 https://skyone.inhire.app/
 https://skyone.inhire.app/css/bundle.68966a3c.css
 https://skyone.inhire.app/css/bundle.92656dc.css
@@ -7342,6 +7384,7 @@ https://skyone.inhire.app/static/js/main.92656dc.js
 https://skyone.inhire.app/static/js/main.ae2252bf.js
 https://skyone.inhire.app/vagas
 https://skyone.inhire.app/vagas/abfe90c4-6302-4065-8806-6f8eba2e1c52/analista-infraestrutura-cloud-jr?source=linkedin
+https://skyone.inhire.app/vagas/f2448406-5073-479d-80fd-41fb34486271/analista-pre-vendas-pleno
 https://softvaro.inhire.app/
 https://softvaro.inhire.app/.well-known/ai-plugin.json
 https://softvaro.inhire.app/.well-known/assetlinks.json
@@ -7637,6 +7680,7 @@ https://sympla.inhire.app/vagas/4f4a19d8-b9aa-4c7c-ade3-fb0865685347/pessoa-dese
 https://sympla.inhire.app/vagas/71ec415b-cfa6-4ee5-a574-e547b1134f70/pessoa-desenvolvedora-backend-jr-or-kotlin
 https://sympla.inhire.app/vagas/71ec415b-cfa6-4ee5-a574-e547b1134f70/pessoa-desenvolvedora-backend-jr-or-kotlin?source=linkedin&trk=public_post_comment-text
 https://sympla.inhire.app/vagas/9c021562-c9cb-4945-8733-4a8ed90ec692/banco-de-talentos-or-estagio?source=linkedin
+https://sympla.inhire.app/vagas/a0dc9139-611f-4600-9b09-d4c5a64a85ad/product-designer-senior-or-b2b-or-remoto
 https://sympla.inhire.app/vagas/f24da823-c522-4942-a3b8-e18ff91813ec/pessoa-desenvolvedora-frontend-junior?source=linkedin
 https://talentt.inhire.app/
 https://talentt.inhire.app/.well-known/ai-plugin.json
@@ -7788,6 +7832,7 @@ https://telavita.inhire.app/static/js/main.4e976e2.js
 https://telavita.inhire.app/static/js/main.9416b127c.js
 https://telavita.inhire.app/static/js/main.e820d4c6d.js
 https://telavita.inhire.app/vagas
+https://telavita.inhire.app/vagas/459825f2-5df6-4b80-97f7-7c58c48fcd41/navegadora-de-cuidado-jornada-de-tratamento-em-saude-mental
 https://telavita.inhire.app/vagas/ba8cf6b0-3c80-423b-84f9-2846a54186d4/analista-de-atendimento?source=linkedin
 https://tempest.inhire.app/css/bundle.ce53c8728.css
 https://tempest.inhire.app/media/icons/favicon.ico
@@ -8311,6 +8356,7 @@ https://v4company.inhire.app/vagas/c800fe03-058c-4f39-88b1-b207d062d9d3/gestor-d
 https://v4company.inhire.app/vagas/cec8624f-65ad-4d50-b0a8-77922ff73a61/designer-plano-or-v4-sousa-goncalves-and-co
 https://v4company.inhire.app/vagas/d56a19c9-03ee-4e89-aafd-00fe5fc3f2f5/designer-junior-or-v4-sampaio-and-co?source=linkedin
 https://v4company.inhire.app/vagas/dfbb36b3-5a99-4ed3-9ca1-bbafcf17dbf1/analista-de-martech-crm-or-trieme-and-co
+https://v4company.inhire.app/vagas/f22fd75e-59f5-44ec-a332-ba3b6bc42e89/gestor-de-trafego-pleno-or-v4-aguiar-and-co
 https://vagasbyintera.inhire.app/
 https://vagasbyintera.inhire.app/.well-known/ai-plugin.json
 https://vagasbyintera.inhire.app/.well-known/assetlinks.json
@@ -8579,6 +8625,7 @@ https://vitru.inhire.app/vagas/7c3f75c0-7b55-43ac-a1b9-1cda588a432e/tutor-facili
 https://vitru.inhire.app/vagas/9b032a77-4fa6-415f-b17a-ccc28abae453/tutor-de-avaliacao-tecnologia-da-informacao-or-exclusiva-pessoas-com-deficiencia
 https://vitru.inhire.app/vagas/9c556988-b4af-4e8d-a45c-76f3d3e5ac1d/tutor-interno-exclusiva-pessoa-com-deficiencia-or-uniasselvi
 https://vitru.inhire.app/vagas/b2abe8fa-a195-4401-ab1d-be39fc85c3f2/auxiliar-administrativo-maringapr-exclusiva-para-pcd
+https://vitru.inhire.app/vagas/bc0b860d-62e3-4e26-8a44-68d403af3bbd/professora-autora-or-curadoria-e-validacao-de-conteudo-nutricao-na-fertilidade-e-somp-edtech-or-vitru
 https://vitru.inhire.app/vagas/c19f21b7-59e2-424a-9898-0878efa78287/auxiliar-de-biblioteca-curitibapr-or-exclusiva-pessoa-com-deficiencia
 https://vitru.inhire.app/vagas/c53cc561-9060-43f0-af29-73b8d83d81a0/tutor-facilitador-nutricao-exclusiva-pcd
 https://vitru.inhire.app/vagas/cefdc601-7395-43a3-9152-ecb049c874c7/tutor-facilitador-agronomia-or-exclusiva-pessoa-com-deficiencia-1873-8821562
@@ -9064,6 +9111,7 @@ https://zappts.inhire.app/vagas/3cf23b66-0279-4135-8910-a03650571a8d/estagio-bac
 https://zappts.inhire.app/vagas/47bf9272-1393-4cb5-9a27-393d8a949fd6/analista-de-automacao-e-inovacao-ia-vaga-afirmativa-para-mulheres-pretas-pardas-e-ind%C3%ADgenas
 https://zappts.inhire.app/vagas/9356cc3a-2ba9-4d23-9797-3a67a463588e/developer-ia-seniorpleno
 https://zappts.inhire.app/vagas/9356cc3a-2ba9-4d23-9797-3a67a463588e/developer-ia-seniorpleno?r=389148d7-78ff-441a-b1f4-4a42759c3bbf
+https://zappts.inhire.app/vagas/b8042737-8f88-4a99-a852-e99342480082/backend-python-sr-integracoes-automacao-e-ia-aplicada
 https://zappts.inhire.app/vagas/ba02d93f-0d83-488b-9274-70ef0d0156c3/estagio-em-qualidade-de-softwareor-oportunidade-exclusiva-para-mulheres
 https://zerezes.inhire.app/
 https://zerezes.inhire.app/.well-known/ai-plugin.json

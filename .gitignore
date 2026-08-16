@@ -1,0 +1,26 @@
+# Artefatos brutos do harvest (grandes, regeneráveis pelo harvest_inhire.js)
+busca_vagas/wb_app.txt
+busca_vagas/us_app_paged.json
+busca_vagas/cc_app.jsonl
+
+# Logs de execução
+busca_vagas/scheduled_log_*.txt
+busca_vagas/run_log.txt
+
+# Snapshot temporário da rodada anterior
+busca_vagas/vagas_final_prev.json
+
+# Locks do Excel
+~$*.xlsx
+
+node_modules/
+
+trampos_*_debug.json
+trampos_debug.html
+trampos_frodo_debug.js
+trampos_test_results.json
+trampos_analistas_debug.json
+trampos_debug_links.json
+trampos_ember_config.txt
+# Arquivos temporários do Excel
+~$*.xlsx

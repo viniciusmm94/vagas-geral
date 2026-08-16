@@ -2,12 +2,12 @@
   {
     "empresa": "Afya",
     "nome_na_plataforma": "Afya ",
-    "vagas_no_pool": 9
+    "vagas_no_pool": 6
   },
   {
     "empresa": "Agility Networks Tecnologia",
     "nome_na_plataforma": "Agility",
-    "vagas_no_pool": 5
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Akross",
@@ -27,7 +27,7 @@
   {
     "empresa": "Ambar",
     "nome_na_plataforma": "Âmbar Energia",
-    "vagas_no_pool": 4
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Ambev",
@@ -37,12 +37,12 @@
   {
     "empresa": "Atento",
     "nome_na_plataforma": "Atento TI",
-    "vagas_no_pool": 6
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Ativa",
-    "nome_na_plataforma": "Pague Menos | Vagas na Matriz Administrativa em Fortaleza - CE",
-    "vagas_no_pool": 7
+    "nome_na_plataforma": "Cocamar Cooperativa Agroindustrial",
+    "vagas_no_pool": 8
   },
   {
     "empresa": "Avita",
@@ -57,7 +57,7 @@
   {
     "empresa": "Banco Daycoval",
     "nome_na_plataforma": "BANCO DAYCOVAL",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 6
   },
   {
     "empresa": "BlueShift Brasil",
@@ -65,14 +65,9 @@
     "vagas_no_pool": 2
   },
   {
-    "empresa": "BRLink",
-    "nome_na_plataforma": "https://br.linkedin.com/company/imdepa",
-    "vagas_no_pool": 1
-  },
-  {
     "empresa": "Cadastra",
     "nome_na_plataforma": "Astra",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Caju",
@@ -82,7 +77,7 @@
   {
     "empresa": "Cia. Hering",
     "nome_na_plataforma": "Cia. Hering",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 5
   },
   {
     "empresa": "Claro Brasil",
@@ -92,22 +87,17 @@
   {
     "empresa": "Cogna",
     "nome_na_plataforma": "Cogna Educação",
-    "vagas_no_pool": 4
+    "vagas_no_pool": 9
   },
   {
     "empresa": "companhiasiderurgicanacional",
     "nome_na_plataforma": "CSN - Companhia Siderúrgica Nacional",
-    "vagas_no_pool": 3
+    "vagas_no_pool": 4
   },
   {
     "empresa": "Conexia Educação",
     "nome_na_plataforma": "+A Educação",
-    "vagas_no_pool": 1
-  },
-  {
-    "empresa": "Confitec",
-    "nome_na_plataforma": "Confitec",
-    "vagas_no_pool": 1
+    "vagas_no_pool": 2
   },
   {
     "empresa": "Conquer",
@@ -117,17 +107,17 @@
   {
     "empresa": "Creditas",
     "nome_na_plataforma": "Talento Creditas",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Cruzeiro do Sul Educacional",
     "nome_na_plataforma": "Cruzeiro do Sul Educacional S/A",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "CVC CORP",
     "nome_na_plataforma": "CVC Corp",
-    "vagas_no_pool": 11
+    "vagas_no_pool": 8
   },
   {
     "empresa": "Dasa",
@@ -142,7 +132,7 @@
   {
     "empresa": "Elife",
     "nome_na_plataforma": "AZZAS 2154 FASHION & LIFESTYLE ",
-    "vagas_no_pool": 3
+    "vagas_no_pool": 4
   },
   {
     "empresa": "Energisa",
@@ -155,11 +145,6 @@
     "vagas_no_pool": 1
   },
   {
-    "empresa": "Fast Shop",
-    "nome_na_plataforma": "Fast Shop S/A",
-    "vagas_no_pool": 1
-  },
-  {
     "empresa": "FORTLEV",
     "nome_na_plataforma": "Fortlev",
     "vagas_no_pool": 1
@@ -167,47 +152,47 @@
   {
     "empresa": "Gauge Digital Consulting",
     "nome_na_plataforma": "Gauge",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Genial Investimentos",
     "nome_na_plataforma": "Genial Investimentos",
-    "vagas_no_pool": 6
-  },
-  {
-    "empresa": "Global Hitss",
-    "nome_na_plataforma": "Global",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 4
   },
   {
     "empresa": "Globalweb",
     "nome_na_plataforma": "Globalweb",
-    "vagas_no_pool": 17
+    "vagas_no_pool": 34
   },
   {
     "empresa": "GOL Linhas Aéreas Inteligentes",
     "nome_na_plataforma": "GOL Linhas Aéreas",
-    "vagas_no_pool": 11
+    "vagas_no_pool": 13
   },
   {
     "empresa": "GPA",
     "nome_na_plataforma": "GPA",
-    "vagas_no_pool": 4
+    "vagas_no_pool": 2
   },
   {
     "empresa": "Grupo Boticário",
     "nome_na_plataforma": "Grupo Boticário",
-    "vagas_no_pool": 6
+    "vagas_no_pool": 10
   },
   {
     "empresa": "Grupo MAG",
     "nome_na_plataforma": "Grupo MAG",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Gupy",
     "nome_na_plataforma": "Gupy",
     "vagas_no_pool": 2
+  },
+  {
+    "empresa": "Hering",
+    "nome_na_plataforma": "Página de Carreiras Heringer",
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Hypera",
@@ -222,67 +207,82 @@
   {
     "empresa": "Indra",
     "nome_na_plataforma": "Minsait an Indra Company",
-    "vagas_no_pool": 10
+    "vagas_no_pool": 8
   },
   {
     "empresa": "Inmetrics",
     "nome_na_plataforma": "Vagas Inmetrics",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 4
   },
   {
     "empresa": "Instituto de Pesquisas Eldorado",
     "nome_na_plataforma": "Instituto de Pesquisas ELDORADO",
-    "vagas_no_pool": 4
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Inter",
-    "nome_na_plataforma": "Atlantica Hospitality International",
-    "vagas_no_pool": 13
+    "nome_na_plataforma": "IBS - International Business School Americas",
+    "vagas_no_pool": 19
+  },
+  {
+    "empresa": "ish-tecnologia",
+    "nome_na_plataforma": "ISH Tecnologia",
+    "vagas_no_pool": 1
   },
   {
     "empresa": "iugu",
     "nome_na_plataforma": "iugu",
-    "vagas_no_pool": 3
+    "vagas_no_pool": 6
   },
   {
     "empresa": "JBS",
     "nome_na_plataforma": "JBS",
-    "vagas_no_pool": 21
+    "vagas_no_pool": 20
   },
   {
     "empresa": "Kovi",
     "nome_na_plataforma": "KOVI ❤️",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Leega",
     "nome_na_plataforma": "Leega Consultoria",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 3
   },
   {
     "empresa": "logicalisbr",
     "nome_na_plataforma": "Encontre aqui uma vaga na Logicalis Brasil",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Lojas Renner S.A.",
-    "nome_na_plataforma": "Encantech - Lojas Renner S.A.",
+    "nome_na_plataforma": "Lojas Renner S.A.",
     "vagas_no_pool": 15
   },
   {
     "empresa": "Lojas Riachuelo",
     "nome_na_plataforma": "Riachuelo ",
-    "vagas_no_pool": 11
+    "vagas_no_pool": 12
+  },
+  {
+    "empresa": "Lopes Consultoria",
+    "nome_na_plataforma": "Lopes Consultoria Imobiliária",
+    "vagas_no_pool": 1
   },
   {
     "empresa": "MDS Group",
     "nome_na_plataforma": "MDS Group",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Movida",
     "nome_na_plataforma": "Movida Aluguel de Carros",
     "vagas_no_pool": 7
+  },
+  {
+    "empresa": "Neogrid",
+    "nome_na_plataforma": "Neogrid Carreiras",
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Omie",
@@ -291,8 +291,8 @@
   },
   {
     "empresa": "Orizon",
-    "nome_na_plataforma": "Orizon Valorização de Resíduos",
-    "vagas_no_pool": 8
+    "nome_na_plataforma": "IOBH - Instituto de Olhos de Belo Horizonte",
+    "vagas_no_pool": 9
   },
   {
     "empresa": "Padtec S/A",
@@ -302,7 +302,12 @@
   {
     "empresa": "Pagseguro Pagbank",
     "nome_na_plataforma": "PagBank",
-    "vagas_no_pool": 7
+    "vagas_no_pool": 8
+  },
+  {
+    "empresa": "Phoebus",
+    "nome_na_plataforma": "Phoebus Tecnologia",
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Pitzi",
@@ -312,32 +317,32 @@
   {
     "empresa": "Porto Seguro",
     "nome_na_plataforma": "Porto",
-    "vagas_no_pool": 19
+    "vagas_no_pool": 15
   },
   {
     "empresa": "Positivo",
     "nome_na_plataforma": "Grupo Positivo",
-    "vagas_no_pool": 10
+    "vagas_no_pool": 6
   },
   {
     "empresa": "Qualicorp",
     "nome_na_plataforma": "Qualicorp",
-    "vagas_no_pool": 4
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Rede D'Or São Luiz",
     "nome_na_plataforma": "Rede D'Or",
-    "vagas_no_pool": 42
+    "vagas_no_pool": 49
   },
   {
     "empresa": "Rede Globo",
     "nome_na_plataforma": "Globo",
-    "vagas_no_pool": 13
+    "vagas_no_pool": 16
   },
   {
     "empresa": "Safra",
     "nome_na_plataforma": "Safra",
-    "vagas_no_pool": 3
+    "vagas_no_pool": 7
   },
   {
     "empresa": "Sicoob",
@@ -347,7 +352,7 @@
   {
     "empresa": "SiDi",
     "nome_na_plataforma": "SiDi",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Softplan Planejamento e Sistemas",
@@ -357,32 +362,27 @@
   {
     "empresa": "Spread Tecnologia",
     "nome_na_plataforma": "Spread Tecnologia",
-    "vagas_no_pool": 7
+    "vagas_no_pool": 12
   },
   {
     "empresa": "Stefanini",
     "nome_na_plataforma": "Stefanini Group",
-    "vagas_no_pool": 84
+    "vagas_no_pool": 83
   },
   {
     "empresa": "SVLabs - The Systems Validation Company",
     "nome_na_plataforma": "Valid",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   },
   {
     "empresa": "Tecban",
     "nome_na_plataforma": "Tecban",
-    "vagas_no_pool": 6
+    "vagas_no_pool": 5
   },
   {
     "empresa": "Tegra",
     "nome_na_plataforma": "CIEE - Centro de Integração Empresa-Escola",
-    "vagas_no_pool": 4
-  },
-  {
-    "empresa": "Telemont",
-    "nome_na_plataforma": "TELEMONT",
-    "vagas_no_pool": 1
+    "vagas_no_pool": 6
   },
   {
     "empresa": "TIM Brasil",
@@ -392,12 +392,12 @@
   {
     "empresa": "Tokio Marine",
     "nome_na_plataforma": "Tokio Marine Seguradora",
-    "vagas_no_pool": 10
+    "vagas_no_pool": 9
   },
   {
     "empresa": "Ultra",
-    "nome_na_plataforma": "Ultragaz",
-    "vagas_no_pool": 14
+    "nome_na_plataforma": "Grupo Ultra",
+    "vagas_no_pool": 13
   },
   {
     "empresa": "UOL",
@@ -412,7 +412,7 @@
   {
     "empresa": "Vagas.com",
     "nome_na_plataforma": "Vagas",
-    "vagas_no_pool": 1
+    "vagas_no_pool": 2
   },
   {
     "empresa": "Vertem",
@@ -432,16 +432,16 @@
   {
     "empresa": "Webjump",
     "nome_na_plataforma": "WEBJUMP",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 3
   },
   {
     "empresa": "Youse Seguros",
     "nome_na_plataforma": "Youse Seguros",
-    "vagas_no_pool": 1
+    "vagas_no_pool": 2
   },
   {
     "empresa": "Z Tech",
     "nome_na_plataforma": "Jazz Tech",
-    "vagas_no_pool": 2
+    "vagas_no_pool": 1
   }
 ]
