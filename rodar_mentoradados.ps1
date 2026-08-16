@@ -1,11 +1,16 @@
 # =====================================================================
-# Pipeline completo de busca de vagas
-# Gupy + InHire + Nerdin
+# Pipeline simplificado para atualizar com Mentora Dados
+# Reutiliza Gupy + InHire + Nerdin + Trampos existentes
 #
 # Uso:
-# powershell -ExecutionPolicy Bypass -File rodar_tudo.ps1
+# powershell -ExecutionPolicy Bypass -File rodar_mentoradados.ps1
 #
-# (opcional) atualize antes o arquivo empresas.xlsx com sua lista.
+# Este script executa apenas:
+# 1. mentoradados.js (coleta nova)
+# 2. merge.js (consolida com plataformas existentes)
+# 3. stamp_dates.js (carimba datas)
+# 4. presence.js (tabela de presença)
+# 5. build_xlsx.ps1 (gera planilha Excel)
 # =====================================================================
 
 $ErrorActionPreference = 'Stop'
@@ -23,14 +28,6 @@ function Step($n, $desc, $cmd) {
   Write-Host ""
 
   Write-Host "==== [$n] $desc ====" -ForegroundColor Cyan
-
-  # Reset do exit code.
-  #
-  # Etapas PowerShell / Excel podem nao alterar $LASTEXITCODE.
-  # Sem isso, um valor herdado de uma etapa anterior poderia
-  # gerar falso erro.
-  #
-  # Node retorna exit code diferente de 0 quando ocorre falha.
 
   $global:LASTEXITCODE = 0
 
@@ -70,90 +67,16 @@ $t0 = Get-Date
 Write-Host ""
 
 Write-Host "==========================================" -ForegroundColor Yellow
-Write-Host " BUSCA DE VAGAS - PIPELINE COMPLETO" -ForegroundColor Yellow
-Write-Host " Gupy + InHire + Nerdin + Trampos + Mentora Dados" -ForegroundColor Yellow
+Write-Host " MENTORA DADOS - ATUALIZAR PIPELINE" -ForegroundColor Yellow
+Write-Host " (reutiliza Gupy + InHire + Nerdin + Trampos)" -ForegroundColor Yellow
 Write-Host "==========================================" -ForegroundColor Yellow
-
-# =====================================================================
-# EMPRESAS
-# =====================================================================
-
-Step 1 `
-  "Extrair empresas do xlsx -> companies.json" `
-  {
-    & "$dir\extrair_empresas.ps1"
-  }
-
-# =====================================================================
-# GUPY
-# =====================================================================
-
-Step 2 `
-  "Gupy: buscar vagas (API global) + presenca pool" `
-  {
-    node "$dir\gupy.js"
-  }
-
-Step 3 `
-  "Gupy: presenca real por subdominio" `
-  {
-    node "$dir\gupy_presence_full.js"
-  }
-
-# =====================================================================
-# INHIRE
-# =====================================================================
-
-Step 4 `
-  "InHire: chute de slug a partir da sua lista" `
-  {
-    node "$dir\inhire.js"
-  }
-
-Step 5 `
-  "InHire: coletar slugs da web (Wayback/urlscan/CC)" `
-  {
-    node "$dir\harvest_inhire.js"
-  }
-
-Step 6 `
-  "InHire: validar todos os slugs na API" `
-  {
-    node "$dir\validate_inhire.js"
-  }
-
-Step 7 `
-  "InHire: gerar saidas (vagas + empresas novas)" `
-  {
-    node "$dir\inhire_saida.js"
-  }
-
-# =====================================================================
-# NERDIN
-# =====================================================================
-
-Step 8 `
-  "Nerdin: buscar vagas Home Office + Hibrido SP (ate 20 dias)" `
-  {
-    node "$dir\nerdin.js"
-  }
-
-# =====================================================================
-# TRAMPOS
-# =====================================================================
-
-Step 9 `
-  "Trampos: buscar vagas com link direto de candidatura" `
-  {
-    node "$dir\trampos.js"
-  }
 
 # =====================================================================
 # MENTORA DADOS
 # =====================================================================
 
-Step 10 `
-  "Mentora Dados: buscar vagas de plataforma agregadora com URLs externas" `
+Step 1 `
+  "Mentora Dados: buscar vagas agregadas com URLs externas" `
   {
     node "$dir\mentoradados.js"
   }
@@ -162,8 +85,8 @@ Step 10 `
 # CONSOLIDACAO
 # =====================================================================
 
-Step 11 `
-  "Consolidar Gupy + InHire + Nerdin + Trampos + Mentora Dados e deduplicar -> vagas_final.json" `
+Step 2 `
+  "Consolidar Gupy + InHire + Nerdin + Trampos + Mentora Dados e deduplicar" `
   {
     node "$dir\merge.js"
   }
@@ -172,7 +95,7 @@ Step 11 `
 # DATA DE DETECCAO
 # =====================================================================
 
-Step 12 `
+Step 3 `
   "Carimbar data de deteccao (novas = hoje)" `
   {
     node "$dir\stamp_dates.js"
@@ -182,7 +105,7 @@ Step 12 `
 # PRESENCA DE EMPRESAS
 # =====================================================================
 
-Step 13 `
+Step 4 `
   "Montar tabela de presenca" `
   {
     node "$dir\presence.js"
@@ -192,7 +115,7 @@ Step 13 `
 # EXCEL
 # =====================================================================
 
-Step 14 `
+Step 5 `
   "Gerar planilha final (Excel, 3 abas)" `
   {
     & "$dir\build_xlsx.ps1"
@@ -217,12 +140,12 @@ Write-Host "==========================================" -ForegroundColor Green
 
 Write-Host ""
 
-Write-Host "Fontes processadas:" -ForegroundColor Green
-Write-Host " - Gupy" -ForegroundColor Green
-Write-Host " - InHire" -ForegroundColor Green
-Write-Host " - Nerdin" -ForegroundColor Green
-Write-Host " - Trampos" -ForegroundColor Green
-Write-Host " - Mentora Dados" -ForegroundColor Green
+Write-Host "Plataformas utilizadas:" -ForegroundColor Green
+Write-Host " - Gupy (reutilizado)" -ForegroundColor Green
+Write-Host " - InHire (reutilizado)" -ForegroundColor Green
+Write-Host " - Nerdin (reutilizado)" -ForegroundColor Green
+Write-Host " - Trampos (reutilizado)" -ForegroundColor Green
+Write-Host " - Mentora Dados (novo)" -ForegroundColor Green
 
 Write-Host ""
 

@@ -20,13 +20,13 @@ dela (coluna "Na sua lista?") e montar a aba de Presença — não corta mais as
    powershell -ExecutionPolicy Bypass -File rodar_tudo.ps1
    ```
 
-3. Ao final, abra a planilha gerada: **`..\vagas_gupy_inhire.xlsx`**
+3. Ao final, abra a planilha gerada: **`..\vagas_consolidadas.xlsx`**
 
 O processo leva ~3–10 min (a maior parte é rede: buscar e validar tenants InHire).
 
-> ⚠️ **FECHE o `vagas_gupy_inhire.xlsx` no Excel antes de rodar.** Se estiver aberto, o
+> ⚠️ **FECHE o `vagas_consolidadas.xlsx` no Excel antes de rodar.** Se estiver aberto, o
 > arquivo fica travado e a última etapa falha. O `build_xlsx.ps1` agora avisa cedo se
-> detectar o lock (`~$vagas_gupy_inhire.xlsx`) em vez de deixar um Excel órfão pendurado.
+> detectar o lock (`~$vagas_consolidadas.xlsx`) em vez de deixar um Excel órfão pendurado.
 
 ### Pré-requisitos
 - **Node.js** (testado no v24) no PATH — https://nodejs.org
@@ -89,7 +89,7 @@ educação, tech, grupo…) ou compact-substring forte. Sem isso dá falso posit
 | 8 | `merge.js` | gupy+inhire → `vagas_final.json` (dedup) |
 | 8b | `stamp_dates.js` | mantém `seen.json` (data da 1ª aparição) → grava `detectado_em` em cada vaga |
 | 9 | `presence.js` | → `presence_combined.json` |
-| 10 | `build_xlsx.ps1` | tudo → `..\vagas_gupy_inhire.xlsx` |
+| 10 | `build_xlsx.ps1` | tudo → `..\vagas_consolidadas.xlsx` |
 
 `lib.js` = helpers compartilhados (normalização, casamento de cargo, `slugify` do título da vaga, pool de concorrência).
 `seen.json` = histórico persistente `{ chave → data }` da 1ª vez que cada vaga foi vista (não apagar; é o que alimenta a coluna "Detectada em").

@@ -49,10 +49,19 @@ const trampos = JSON.parse(
   )
 );
 
+const mentoradados = JSON.parse(
+  fs.readFileSync(
+    path.join(
+      DIR,
+      'mentoradados_results.json'
+    ),
+    'utf8'
+  )
+);
+
 // ============================================================
 // NORMALIZAÇÃO
 // ============================================================
-
 function norm(value) {
   return String(
     value || ''
@@ -135,7 +144,7 @@ function alerta(row) {
 }
 
 // ============================================================
-// NORMALIZAÇÃO DAS 3 FONTES
+// NORMALIZAÇÃO DAS 5 FONTES
 // ============================================================
 
 const all =
@@ -143,7 +152,8 @@ const all =
     ...gupy,
     ...inhire,
     ...nerdin,
-    ...trampos
+    ...trampos,
+    ...mentoradados
   ]
     .map(row => {
       /*
@@ -521,6 +531,13 @@ const finalTrampos =
       'Trampos'
   ).length;
 
+const finalMentoraDados =
+  deduped.filter(
+    row =>
+      row.plataforma ===
+      'Mentora Dados'
+  ).length;
+
 const withAlert =
   deduped.filter(
     row =>
@@ -562,6 +579,10 @@ console.log(
 );
 
 console.log(
+  `[merge] Mentora Dados recebidas: ${mentoradados.length}`
+);
+
+console.log(
   `[merge] Total antes do dedupe: ${all.length}`
 );
 
@@ -595,6 +616,10 @@ console.log(
 
 console.log(
   `[merge] Trampos finais: ${finalTrampos}`
+);
+
+console.log(
+  `[merge] Mentora Dados finais: ${finalMentoraDados}`
 );
 
 console.log(

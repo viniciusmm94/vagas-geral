@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $dir = $PSScriptRoot
-$outPath = Join-Path (Split-Path -Parent $dir) 'vagas_gupy_inhire.xlsx'
+$outPath = Join-Path (Split-Path -Parent $dir) 'vagas_consolidadas.xlsx'
 
 $vagas    = Get-Content "$dir\vagas_final.json" -Raw -Encoding UTF8 | ConvertFrom-Json
 $presenca = Get-Content "$dir\presence_combined.json" -Raw -Encoding UTF8 | ConvertFrom-Json
