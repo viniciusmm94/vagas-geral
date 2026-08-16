@@ -71,7 +71,7 @@ Write-Host ""
 
 Write-Host "==========================================" -ForegroundColor Yellow
 Write-Host " BUSCA DE VAGAS - PIPELINE COMPLETO" -ForegroundColor Yellow
-Write-Host " Gupy + InHire + Nerdin" -ForegroundColor Yellow
+Write-Host " Gupy + InHire + Nerdin + Trampos" -ForegroundColor Yellow
 Write-Host "==========================================" -ForegroundColor Yellow
 
 # =====================================================================
@@ -139,11 +139,21 @@ Step 8 `
   }
 
 # =====================================================================
-# CONSOLIDACAO
+# TRAMPOS
 # =====================================================================
 
 Step 9 `
-  "Consolidar Gupy + InHire + Nerdin e deduplicar -> vagas_final.json" `
+  "Trampos: buscar vagas com link direto de candidatura" `
+  {
+    node "$dir\trampos.js"
+  }
+
+# =====================================================================
+# CONSOLIDACAO
+# =====================================================================
+
+Step 10 `
+  "Consolidar Gupy + InHire + Nerdin + Trampos e deduplicar -> vagas_final.json" `
   {
     node "$dir\merge.js"
   }
@@ -152,7 +162,7 @@ Step 9 `
 # DATA DE DETECCAO
 # =====================================================================
 
-Step 10 `
+Step 11 `
   "Carimbar data de deteccao (novas = hoje)" `
   {
     node "$dir\stamp_dates.js"
@@ -162,7 +172,7 @@ Step 10 `
 # PRESENCA DE EMPRESAS
 # =====================================================================
 
-Step 11 `
+Step 12 `
   "Montar tabela de presenca" `
   {
     node "$dir\presence.js"
@@ -172,7 +182,7 @@ Step 11 `
 # EXCEL
 # =====================================================================
 
-Step 12 `
+Step 13 `
   "Gerar planilha final (Excel, 3 abas)" `
   {
     & "$dir\build_xlsx.ps1"
@@ -201,6 +211,7 @@ Write-Host "Fontes processadas:" -ForegroundColor Green
 Write-Host " - Gupy" -ForegroundColor Green
 Write-Host " - InHire" -ForegroundColor Green
 Write-Host " - Nerdin" -ForegroundColor Green
+Write-Host " - Trampos" -ForegroundColor Green
 
 Write-Host ""
 

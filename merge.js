@@ -39,6 +39,16 @@ const nerdin = JSON.parse(
   )
 );
 
+const trampos = JSON.parse(
+  fs.readFileSync(
+    path.join(
+      DIR,
+      'trampos_results.json'
+    ),
+    'utf8'
+  )
+);
+
 // ============================================================
 // NORMALIZAÇÃO
 // ============================================================
@@ -132,7 +142,8 @@ const all =
   [
     ...gupy,
     ...inhire,
-    ...nerdin
+    ...nerdin,
+    ...trampos
   ]
     .map(row => {
       /*
@@ -503,6 +514,13 @@ const finalNerdin =
       'Nerdin'
   ).length;
 
+const finalTrampos =
+  deduped.filter(
+    row =>
+      row.plataforma ===
+      'Trampos'
+  ).length;
+
 const withAlert =
   deduped.filter(
     row =>
@@ -540,6 +558,10 @@ console.log(
 );
 
 console.log(
+  `[merge] Trampos recebidas: ${trampos.length}`
+);
+
+console.log(
   `[merge] Total antes do dedupe: ${all.length}`
 );
 
@@ -569,6 +591,10 @@ console.log(
 
 console.log(
   `[merge] Nerdin finais: ${finalNerdin}`
+);
+
+console.log(
+  `[merge] Trampos finais: ${finalTrampos}`
 );
 
 console.log(
